@@ -1,0 +1,21 @@
+version: "3"
+services:
+  nginx:
+    image: wrfly/nginx:example
+    environment:
+      - FLAG=<FLAG>
+    ports:
+      - 80
+    deploy:
+      placement:
+        constraints:
+          - node.role != manager
+      mode: replicated
+      replicas: 1
+      resources:
+        limits:
+          cpus: '0.05' # CPU Limit 5%
+          memory: 10M  # Mem Limit 50M
+        reservations:
+          cpus: '0.001'
+          memory: 4M
