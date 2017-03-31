@@ -31,3 +31,9 @@ services:
           cpus: '0.001'
           memory: 10M
 ```
+
+# Build Images
+
+dl-cdn.alpinelinux.org CNAME-> alpine.cdn.h3llo.cn
+
+<https://portal.qiniu.com/signup?code=3laicn82qraz6>

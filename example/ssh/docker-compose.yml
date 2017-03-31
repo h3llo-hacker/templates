@@ -1,11 +1,11 @@
 version: "3"
 services:
-  nginx:
-    image: wrfly/example:nginx
+  ssh:
+    image: example:ssh
     environment:
       - FLAG=<FLAG>
     ports:
-      - 80
+      - 22
     deploy:
       placement:
         constraints:
