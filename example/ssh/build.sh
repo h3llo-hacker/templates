@@ -1,2 +1,2 @@
 #!/bin/bash
-docker build -t example:ssh .
+docker build -t wrfly/example:ssh .
