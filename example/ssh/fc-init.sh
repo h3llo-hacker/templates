@@ -1,6 +1,6 @@
 #!/bin/ash
 
-PASSWD=$(echo $RANDOM$RANDOM | head -c 4)
+PASSWD=$(echo $RANDOM$RANDOM | head -c 3)
 echo "Setting Root Password: $PASSWD"
 echo -e root:$PASSWD | chpasswd
 
