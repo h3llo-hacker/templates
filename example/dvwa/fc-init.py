@@ -23,7 +23,7 @@ os.system("/usr/bin/supervisord -c /etc/supervisord.conf")
 print "sleep 5s"
 for x in xrange(1,5):
 	time.sleep(1)
-	print 10-x
+	print 5-x
 
 HOST = "127.0.0.1:80"
 while 1:
