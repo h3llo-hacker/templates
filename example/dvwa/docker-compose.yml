@@ -1,0 +1,35 @@
+version: "3"
+services:
+  web:
+    image: wrfly/example:dvwa
+    environment:
+      - FLAG=<FLAG>
+      - DB_SERVER=db
+      - DB_USER=root
+      - DB_PASSWORD=password
+    ports:
+      - 8081:80
+    deploy:
+      placement:
+        constraints:
+          - node.role != manager
+      resources:
+        limits:
+          cpus: '0.05' # CPU Limit 5%
+          memory: 30M  # Mem Limit 30M
+        reservations:
+          cpus: '0.001'
+          memory: 20M
+  db:
+    image: wrfly/alpine-mysql:latest
+    deploy:
+      placement:
+        constraints:
+          - node.role != manager
+      resources:
+        limits:
+          cpus: '0.05' # CPU Limit 5%
+          memory: 40M  # Mem Limit 40M
+        reservations:
+          cpus: '0.001'
+          memory: 30M
