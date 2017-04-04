@@ -15,7 +15,7 @@ services:
       resources:
         limits:
           cpus: '0.05' # CPU Limit 5%
-          memory: 5M  # Mem Limit 5M
+          memory: 25M  # Mem Limit 25M
         reservations:
           cpus: '0.001'
-          memory: 4M
+          memory: 15M
