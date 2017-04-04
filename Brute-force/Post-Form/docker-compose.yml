@@ -1,7 +1,7 @@
 version: "3"
 services:
   nginx:
-    image: wrfly/brute-force_basic-auth:latest
+    image: wrfly/brute-force_post-form:latest
     environment:
       - FLAG=<FLAG>
     ports:
@@ -15,7 +15,7 @@ services:
       resources:
         limits:
           cpus: '0.05' # CPU Limit 5%
-          memory: 5M  # Mem Limit 10M
+          memory: 5M  # Mem Limit 5M
         reservations:
           cpus: '0.001'
           memory: 4M
