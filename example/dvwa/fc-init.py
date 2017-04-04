@@ -27,7 +27,7 @@ for x in xrange(1,5):
 
 HOST = "127.0.0.1:80"
 while 1:
-	time.sleep(3)
+	time.sleep(5)
 	conn = httplib.HTTPConnection(HOST)
 	conn.request("GET", "/setup.php")
 	r1 = conn.getresponse()
