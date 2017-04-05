@@ -20,7 +20,7 @@ services:
           cpus: '0.05'
           memory: 4M
     healthcheck:
-      test: ["CMD", "ssh ", "root@127.0.0.1"]
+      test: ["CMD", "pgrep", "sshd"]
       interval: 10s
-      timeout: 5s
+      timeout: 1s
       retries: 3
