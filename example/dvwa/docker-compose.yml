@@ -20,6 +20,11 @@ services:
         reservations:
           cpus: '0.001'
           memory: 20M
+    healthcheck:
+      test: ["CMD", "pgrep", "nginx"]
+      interval: 20s
+      timeout: 1s
+      retries: 2
   db:
     image: wrfly/alpine-mysql:latest
     deploy:
@@ -33,3 +38,8 @@ services:
         reservations:
           cpus: '0.001'
           memory: 30M
+    healthcheck:
+      test: ["CMD", "pgrep", "mysqld"]
+      interval: 20s
+      timeout: 1s
+      retries: 2

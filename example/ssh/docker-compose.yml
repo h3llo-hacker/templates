@@ -15,7 +15,7 @@ services:
       resources:
         limits:
           cpus: '0.2' # CPU Limit 20%
-          memory: 10M  # Mem Limit 10M
+          memory: 30M  # Mem Limit 30M
         reservations:
           cpus: '0.05'
           memory: 4M
@@ -23,4 +23,4 @@ services:
       test: ["CMD", "pgrep", "sshd"]
       interval: 10s
       timeout: 1s
-      retries: 3
+      retries: 2

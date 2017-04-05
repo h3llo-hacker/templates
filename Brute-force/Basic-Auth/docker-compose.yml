@@ -19,3 +19,8 @@ services:
         reservations:
           cpus: '0.001'
           memory: 4M
+    healthcheck:
+      test: ["CMD", "pgrep", "nginx"]
+      interval: 30s
+      timeout: 1s
+      retries: 2

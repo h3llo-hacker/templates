@@ -19,3 +19,8 @@ services:
         reservations:
           cpus: '0.001'
           memory: 15M
+    healthcheck:
+      test: ["CMD", "pgrep", "supervisord"]
+      interval: 30s
+      timeout: 1s
+      retries: 2
