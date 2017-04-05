@@ -14,8 +14,13 @@ services:
       replicas: 1
       resources:
         limits:
-          cpus: '0.05' # CPU Limit 5%
+          cpus: '0.2' # CPU Limit 20%
           memory: 10M  # Mem Limit 10M
         reservations:
-          cpus: '0.001'
+          cpus: '0.05'
           memory: 4M
+    healthcheck:
+      test: ["CMD", "ssh ", "root@127.0.0.1"]
+      interval: 10s
+      timeout: 5s
+      retries: 3
