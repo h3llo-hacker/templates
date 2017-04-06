@@ -4,6 +4,7 @@
 sed -i "s/skip-grant-tables//" /etc/my.cnf
 
 FLAG=$(env | grep FLAG | sed "s/.*=//g")
+echo $FLAG
 
 # 19950101 788889600
 # 19950102 788976000
@@ -20,12 +21,19 @@ echo "Setting mysql password: $PASSWD"
 
 mysqld &
 
-sleep 5
+sleep 3
 
 mysql -D mysql <<EOF
 CREATE USER 'root'@'%' IDENTIFIED BY "$PASSWD";
 GRANT ALL ON *.* TO 'root'@'%' ;
 FLUSH PRIVILEGES;
+EOF
+
+mysql <<EOF
+CREATE DATABASE flag;
+USE flag;
+CREATE TABLE flag(flag text);
+INSERT INTO flag VALUE("$FLAG");
 EOF
 
 # e...
