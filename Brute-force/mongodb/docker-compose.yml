@@ -1,7 +1,7 @@
 version: "3"
 services:
   mysql:
-    image: wrfly/brute-force_mongodb:latest
+    image: wrfly/brute_force-mongodb:latest
     ports:
       - 27017
     environment:

@@ -1,7 +1,7 @@
 version: "3"
 services:
   mysql:
-    image: wrfly/brute-force_ftp:latest
+    image: wrfly/brute_force-ftp:latest
     ports:
       - 21
     environment:
