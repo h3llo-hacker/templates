@@ -32,8 +32,21 @@ services:
           memory: 10M
 ```
 
-# Build Images
+# Build Services
 
-dl-cdn.alpinelinux.org CNAME-> alpine.cdn.h3llo.cn
+- Use `alpine` as the base image as can as possible.
 
-<https://portal.qiniu.com/signup?code=3laicn82qraz6>
+Tips: You can use `wrfly/alpine-cn:latest` to get a better download/install speed in the container.
+
+- Each service has one public port at most.(I'm tring to make it more.)
+
+- The service use `FLAG` environment as the input flag.
+
+# How to Name the Templates
+
+```
+wrfly/brute_force-mongodb:latest
+<user>/<cate>-<service>:latest
+```
+
+The tag is reserved for other usage such as different version of the service.
