@@ -3,7 +3,7 @@ services:
   mysql:
     image: wrfly/brute-force_ftp:latest
     ports:
-      - 3306
+      - 21
     environment:
       - FLAG=<FLAG>
     deploy:
