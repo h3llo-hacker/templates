@@ -1,0 +1,21 @@
+version: "3"
+services:
+  mysql:
+    image: wrfly/brute-force_ftp:latest
+    ports:
+      - 3306
+    environment:
+      - FLAG=<FLAG>
+    deploy:
+      placement:
+        constraints:
+          - node.role != manager
+      resources:
+        limits:
+          cpus: '0.05'
+          memory: 5M
+    healthcheck:
+      test: ["CMD", "pgrep", "vsftpd"]
+      interval: 20s
+      timeout: 1s
+      retries: 2
