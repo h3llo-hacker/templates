@@ -1,7 +1,7 @@
 version: "3"
 services:
-  nginx:
-    image: wrfly/web_pt-sql_inject_${num}:latest
+  server:
+    image: wrfly/web_pt-sql_inject:level_1 # tag=level_x
     environment:
       - FLAG=<FLAG>
     ports:
