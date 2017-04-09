@@ -1,0 +1,26 @@
+version: "3"
+services:
+  nginx:
+    image: wrfly/web_pt-sql_inject_${num}:latest
+    environment:
+      - FLAG=<FLAG>
+    ports:
+      - 80
+    deploy:
+      placement:
+        constraints:
+          - node.role != manager
+      mode: replicated
+      replicas: 1
+      resources:
+        limits:
+          cpus: '0.05' # CPU Limit 5%
+          memory: 50M  # Mem Limit 25M
+        reservations:
+          cpus: '0.001'
+          memory: 35M
+    healthcheck:
+      test: ["CMD", "pgrep", "php7"]
+      interval: 30s
+      timeout: 1s
+      retries: 2
