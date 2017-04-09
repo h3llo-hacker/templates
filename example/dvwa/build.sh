@@ -6,4 +6,4 @@ docker build -t wrfly/example:dvwa .
 echo
 echo
 echo
-docker stack deploy -c ../docker-compose.yml dvwa
+docker stack deploy -c docker-compose.yml dvwa
