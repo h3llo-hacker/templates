@@ -1,21 +1,26 @@
 version: "3"
 services:
-  ftp:
-    image: wrfly/brute_force-ftp:latest
-    ports:
-      - 21
+  server:
+    image: wrfly/web_pt-xss:example
     environment:
       - FLAG=<FLAG>
+    ports:
+      - 80
     deploy:
       placement:
         constraints:
           - node.role != manager
+      mode: replicated
+      replicas: 1
       resources:
         limits:
           cpus: '0.05'
+          memory: 10M
+        reservations:
+          cpus: '0.001'
           memory: 5M
     healthcheck:
-      test: ["CMD", "pgrep", "vsftpd"]
-      interval: 20s
+      test: ["CMD", "pgrep", "php7"]
+      interval: 30s
       timeout: 1s
       retries: 2
