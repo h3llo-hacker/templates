@@ -1,11 +1,5 @@
 #!/bin/sh
-
-mysqld &> /dev/null &
-
-echo 
-
 cd /app
-
 echo 
 echo "Running Server..."
 

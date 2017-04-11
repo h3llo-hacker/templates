@@ -1,0 +1,26 @@
+version: "3"
+services:
+  server:
+    image: wrfly/web_pt-code_exec:basic
+    environment:
+      - FLAG=<FLAG>
+    ports:
+      - 80
+    deploy:
+      placement:
+        constraints:
+          - node.role != manager
+      mode: replicated
+      replicas: 1
+      resources:
+        limits:
+          cpus: '0.05'
+          memory: 10M
+        reservations:
+          cpus: '0.001'
+          memory: 5M
+    healthcheck:
+      test: ["CMD", "pgrep", "php5"]
+      interval: 30s
+      timeout: 1s
+      retries: 2
