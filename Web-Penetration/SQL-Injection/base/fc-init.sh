@@ -11,4 +11,4 @@ sed -i "s/FLAG/${FLAG}/g" data.sql
 echo 
 echo "Running Server..."
 
-php7 -S 0.0.0.0:80 &> /dev/null
+php7 -n -S 0.0.0.0:80 &> /dev/null
