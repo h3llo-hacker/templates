@@ -2,6 +2,7 @@
 
 # Turn on php error track
 sed -i "s/track_errors\ =\ Off/track_errors\ =\ On/g" /etc/php7/php.ini
+sed -i "s/display_errors\ =\ Off/display_errors\ =\ On/g" /etc/php7/php.ini
 
 mysqld &> /dev/null &
 
