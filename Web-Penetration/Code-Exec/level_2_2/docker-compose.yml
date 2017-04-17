@@ -15,10 +15,10 @@ services:
       resources:
         limits:
           cpus: '0.05'
-          memory: 10M
+          memory: 5M
         reservations:
           cpus: '0.001'
-          memory: 5M
+          memory: 4M
     healthcheck:
       test: ["CMD", "pgrep", "php5"]
       interval: 30s

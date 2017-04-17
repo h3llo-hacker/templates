@@ -1,7 +1,7 @@
 version: "3"
 services:
   server:
-    image: wrfly/web_pt-command_exec:example2
+    image: wrfly/web_pt-fileupload:level_0
     environment:
       - FLAG=<FLAG>
     ports:
