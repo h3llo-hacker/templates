@@ -1,7 +1,7 @@
 version: "3"
 services:
   server:
-    image: wrfly/web_pt-fileincl:level_0
+    image: wrfly/web_pt-fileinclude:level_0
     environment:
       - FLAG=<FLAG>
     ports:
